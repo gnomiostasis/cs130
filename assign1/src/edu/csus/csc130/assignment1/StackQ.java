@@ -3,7 +3,7 @@ package edu.csus.csc130.assignment1;
 import java.util.Iterator;
 
 /**
- * Modified by FirstName LastName
+ * Modified by Zack Waller
  *
  * Stack implementation using a Queue
  */
@@ -21,32 +21,38 @@ public class StackQ<E> implements StackI<E> {
 
 	@Override
 	public void push(E item) {
-		// provide your implementation here
-		throw new UnsupportedOperationException();
+		queue.enqueue(item);
 	}
 
 	@Override
 	public E pop() {
-		// provide your implementation here
-		throw new UnsupportedOperationException();
+		for (int i = 0; i<queue.size()-1; i++)
+		{
+			shift();
+		}
+		return queue.dequeue();
 	}
 
 	@Override
 	public E peek() {
-		// provide your implementation here
-		throw new UnsupportedOperationException();
+		E item = pop();
+		push(item);
+		return item;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// provide your implementation here
-		throw new UnsupportedOperationException();
+		return queue.isEmpty();
 	}
 
 	@Override
 	public int size() {
-		// provide your implementation here
-		throw new UnsupportedOperationException();
+		return queue.size();
+	}
+	
+	private void shift()
+	{
+		queue.enqueue(queue.dequeue());
 	}
 
 }

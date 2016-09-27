@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Modified by FirstName LastName
+ * Modified by Zack Waller
  *
  */
 public class Miscellaneous {
@@ -14,14 +14,28 @@ public class Miscellaneous {
 		// provide your implementation here
 		try 
 		{
-			if(n == 0)
+			while(n>=0)
 			{
-				return 1;
-			}
-			 
-			if (n == 1)
-			{
-				return x;
+				if(n == 0)
+				{
+					return 1;
+				}
+				 
+				if (n == 1)
+				{
+					return x;
+				}
+				
+				if (n % 2 == 0)
+				{
+					x = x*x;
+				}
+				else
+				{
+					x = x*x*x;
+				}
+					 
+				n = n/2;
 			}
 			 
 		}
@@ -29,12 +43,7 @@ public class Miscellaneous {
 		{ 
 			throw e;
 		}
-		return 0;
-			 
-//			 if (n % 2 == 0)
-//			 return powR(x * x, n / 2);
-//			 else
-//			 return powR(x * x, n / 2) * x;
+		return x;
 	}
 	
 	public static int binarySearch(int[] a, int key) {
