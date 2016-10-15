@@ -17,14 +17,35 @@ public class Sorting {
 	 */
 	public static <T extends Comparable<T>> List<T> merge(List<T> list1, List<T> list2) {
 		List<T> list = new LinkedList<T>();
+		
 		// provide implementation here
+		int list1_index = 0;
+		int list2_index = 0;
+		int combined_size = list1.size() + list2.size();
+		while (list.size()<=combined_size)
+		{
+			T item1 = list1.get(list1_index);
+			T item2 = list2.get(list2_index);
+			//if item1<item2
+			if (isLessThan(item2,item1))
+			{
+				list.add(item1);
+				list1_index++;
+			}
+			else
+			{
+				list.add(item2);
+				list2_index++;
+			}
+		}
+		
 		return list;
 	}
 	
 	/**
 	 * @param a String array where each element has one of the three values: "false", "maybe", or "true"
-	 * Give an O(N) algorithm to rearrange the elements so that all “false” elements precede “maybe” elements, 
-	 * which in turn precede “true” elements. You may use only constant extra space.  
+	 * Give an O(N) algorithm to rearrange the elements so that all ï¿½falseï¿½ elements precede ï¿½maybeï¿½ elements, 
+	 * which in turn precede ï¿½trueï¿½ elements. You may use only constant extra space.  
 	 */
 	public static void rearrange(String[] a) {
 		throw new UnsupportedOperationException();
