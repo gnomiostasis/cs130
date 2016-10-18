@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Modified by firstname lastname
+ * Modified by Zack Waller
  *
  */
 public class Sorting {

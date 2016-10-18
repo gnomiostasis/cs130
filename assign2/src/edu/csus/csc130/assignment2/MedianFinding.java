@@ -1,7 +1,7 @@
 package edu.csus.csc130.assignment2;
 
 /**
- * Modified by firstname lastname
+ * Modified by Zack Waller
  *
  */
 public class MedianFinding {
