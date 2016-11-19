@@ -1,3 +1,8 @@
+/**
+ *  Zack Waller
+ *  Assignment 3 
+ *  CS130
+ * **/
 package edu.csus.csc130.fall2016.assignment3;
 import java.util.HashMap;
 public class STClient {

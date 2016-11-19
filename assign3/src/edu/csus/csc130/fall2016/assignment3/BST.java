@@ -1,3 +1,8 @@
+/**
+ *  Zack Waller
+ *  Assignment 3 
+ *  CS130
+ * **/
 package edu.csus.csc130.fall2016.assignment3;
 
 import java.util.LinkedList;
@@ -160,9 +165,78 @@ public class BST<Key extends Comparable<Key>, Value>
 	}
 	
 	private Node floorI(Node node, Key key) {
-		throw new UnsupportedOperationException();
+		Node current = node;
+		Node best = null;
+		while (true)
+		{
+			
+			if (current.key.compareTo(key) < 0)
+			{
+				best = getGreatest(current,best);
+			}
+			
+			int compare = key.compareTo(current.key);
+			if (compare == 0)
+			{
+				best = current;
+				return best;
+			}
+			else if (compare > 0)
+			{
+				//get right
+				if (current.right != null)
+				{
+					current = current.right;
+				}
+				else
+				{
+					return best;
+				}
+			}
+			else if (compare < 0)
+			{
+				//get left
+				if (current.left != null)
+				{
+					current = current.left;
+				}
+				else
+				{
+					return best;
+				}
+			}
+		}
 	}	
 
+	private Node getGreatest(Node node1, Node node2)
+	{
+		if (node1==null && node2==null)
+		{
+			return null;
+		}
+		else if(node1 == null)
+		{
+			return node2;
+		}
+		else if(node2 == null)
+		{
+			return node1;
+		}
+		
+		int compare = node1.key.compareTo(node2.key);
+		if (compare > 0)
+		{
+			return node1;
+		}
+		else if (compare < 0)
+		{
+			return node2;
+		}
+		else
+		{
+			return node2;
+		}
+	}
 	@Override
 	public Key ceiling(Key key) {
 		// not implemented yet

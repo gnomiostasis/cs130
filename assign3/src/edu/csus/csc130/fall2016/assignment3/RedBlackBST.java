@@ -1,3 +1,8 @@
+/**
+ *  Zack Waller
+ *  Assignment 3 
+ *  CS130
+ * **/
 package edu.csus.csc130.fall2016.assignment3;
 
 public class RedBlackBST<Key extends Comparable<Key>, Value> {
@@ -108,7 +113,27 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     
     //Q11
     public double getRedNodePercentage() {
-    	throw new UnsupportedOperationException();
+    	int reds = getRedCount(root);
+    	int size = size(root);
+    	return (double)reds/(double)size;
+    }
+    
+    public int getRedCount (Node root){ 
+    	return getRedCount(root,0);
+    }
+    
+    public int getRedCount (Node root, int count){ 
+    	if (isRed(root))
+    	{
+    		count++;
+    	}
+        if (root.left != null){
+            count = getRedCount (root.left, count);
+        }
+        if (root.right != null){
+            count = getRedCount (root.right, count);
+        }
+        return count;
     }
 
 }

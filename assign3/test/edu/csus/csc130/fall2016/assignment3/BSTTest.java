@@ -17,7 +17,7 @@ public class BSTTest {
 		BST<Character, Integer> bst = getBST();
 		Character expected = 'M';
 		Assert.assertEquals(expected, bst.floorI('P'));
-	}	
+	}
 	
 	private BST<Character, Integer> getBST() {
 		BST<Character, Integer> bst = new BST<Character, Integer>();
